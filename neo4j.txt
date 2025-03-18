@@ -147,3 +147,5 @@ MATCH (leaf2:Leaf {name: "Leaf2"})
 WITH leaf2
 MATCH (spine:Spine {name: "Spine1"})
 CREATE (leaf2)-[:LINKS_TO]->(spine);
+
+MATCH (n) DETACH DELETE n;
