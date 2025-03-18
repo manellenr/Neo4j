@@ -1,3 +1,17 @@
+Relier Application à CNF
+Relier CNF à (:Microservices), (:Microservices2), (:Microservices3)
+Relier (:Microservices) à (:Container)
+Relier (:Microservices2) à (:Container2)
+Relier (:Microservices3) à (:Container3)
+Relier (:Container) à (:PhysicalServer)
+Relier (:Container2) à (:PhysicalServer)
+Relier (:Container3) à (:PhysicalServer2)
+Relier (:PhysicalServer) à (:Leaf)
+Relier (:PhysicalServer2) à (:Leaf2)
+Relier (:Leaf) à (:Spine)
+Relier (:Leaf2) à (:Spine) :
+
+-----------------------------------------------------
 CREATE (:Application)
 CREATE (:CNF)
 CREATE (:Microservices)
@@ -49,6 +63,65 @@ MATCH (leaf1:Leaf), (spine:Spine)
 CREATE (leaf1)-[:LINKS_TO]->(spine);
 
 MATCH (leaf2:Leaf2), (spine:Spine)
+CREATE (leaf2)-[:LINKS_TO]->(spine);
+
+----------------------------------------
+
+// Création des nœuds avec des identifiants uniques
+CREATE (app:Application {name: "App1"})
+CREATE (cnf:CNF {name: "CNF1"})
+CREATE (ms1:Microservices {name: "Microservice1"})
+CREATE (ms2:Microservices {name: "Microservice2"})
+CREATE (ms3:Microservices {name: "Microservice3"})
+CREATE (c1:Container {name: "Container1"})
+CREATE (c2:Container {name: "Container2"})
+CREATE (c3:Container {name: "Container3"})
+CREATE (ps1:PhysicalServer {name: "PhysicalServer1"})
+CREATE (ps2:PhysicalServer {name: "PhysicalServer2"})
+CREATE (leaf1:Leaf {name: "Leaf1"})
+CREATE (leaf2:Leaf {name: "Leaf2"})
+CREATE (spine:Spine {name: "Spine1"});
+
+// Création des relations sans produits cartésiens
+MATCH (app:Application {name: "App1"}), (cnf:CNF {name: "CNF1"})
+CREATE (app)-[:CONNECTED_TO]->(cnf);
+
+MATCH (cnf:CNF {name: "CNF1"}), 
+      (ms1:Microservices {name: "Microservice1"}), 
+      (ms2:Microservices {name: "Microservice2"}), 
+      (ms3:Microservices {name: "Microservice3"})
+CREATE (cnf)-[:CONTAINS]->(ms1)
+CREATE (cnf)-[:CONTAINS]->(ms2)
+CREATE (cnf)-[:CONTAINS]->(ms3);
+
+MATCH (ms1:Microservices {name: "Microservice1"}), (c1:Container {name: "Container1"})
+CREATE (ms1)-[:DEPLOYS]->(c1);
+
+MATCH (ms2:Microservices {name: "Microservice2"}), (c2:Container {name: "Container2"})
+CREATE (ms2)-[:DEPLOYS]->(c2);
+
+MATCH (ms3:Microservices {name: "Microservice3"}), (c3:Container {name: "Container3"})
+CREATE (ms3)-[:DEPLOYS]->(c3);
+
+MATCH (c1:Container {name: "Container1"}), (ps1:PhysicalServer {name: "PhysicalServer1"})
+CREATE (c1)-[:HOSTED_ON]->(ps1);
+
+MATCH (c2:Container {name: "Container2"}), (ps1:PhysicalServer {name: "PhysicalServer1"})
+CREATE (c2)-[:HOSTED_ON]->(ps1);
+
+MATCH (c3:Container {name: "Container3"}), (ps2:PhysicalServer {name: "PhysicalServer2"})
+CREATE (c3)-[:HOSTED_ON]->(ps2);
+
+MATCH (ps1:PhysicalServer {name: "PhysicalServer1"}), (leaf1:Leaf {name: "Leaf1"})
+CREATE (ps1)-[:CONNECTED_TO]->(leaf1);
+
+MATCH (ps2:PhysicalServer {name: "PhysicalServer2"}), (leaf2:Leaf {name: "Leaf2"})
+CREATE (ps2)-[:CONNECTED_TO]->(leaf2);
+
+MATCH (leaf1:Leaf {name: "Leaf1"}), (spine:Spine {name: "Spine1"})
+CREATE (leaf1)-[:LINKS_TO]->(spine);
+
+MATCH (leaf2:Leaf {name: "Leaf2"}), (spine:Spine {name: "Spine1"})
 CREATE (leaf2)-[:LINKS_TO]->(spine);
 
 
