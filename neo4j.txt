@@ -1,0 +1,7 @@
+CREATE (:Application)
+CREATE (:CNF)
+CREATE (:Microservices)
+CREATE (:Container)
+CREATE (:PhysicalServer)
+CREATE (:Leaf)
+CREATE (:Spine);
