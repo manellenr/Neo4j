@@ -1,3 +1,17 @@
+Relier Application à CNF
+Relier CNF à (:Microservices), (:Microservices2), (:Microservices3)
+Relier (:Microservices) à (:Container)
+Relier (:Microservices2) à (:Container2)
+Relier (:Microservices3) à (:Container3)
+Relier (:Container) à (:PhysicalServer)
+Relier (:Container2) à (:PhysicalServer)
+Relier (:Container3) à (:PhysicalServer2)
+Relier (:PhysicalServer) à (:Leaf)
+Relier (:PhysicalServer2) à (:Leaf2)
+Relier (:Leaf) à (:Spine)
+Relier (:Leaf2) à (:Spine) :
+
+
 CREATE (:Application)
 CREATE (:CNF)
 CREATE (:Microservices)
@@ -5,3 +19,11 @@ CREATE (:Container)
 CREATE (:PhysicalServer)
 CREATE (:Leaf)
 CREATE (:Spine);
+
+CREATE (:Microservices2)
+CREATE (:Microservices3)
+CREATE (:Container2)
+CREATE (:Container3)
+CREATE (:PhysicalServer2)
+CREATE (:Leaf2);
+
