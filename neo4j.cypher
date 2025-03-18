@@ -1,73 +1,4 @@
-Relier Application à CNF
-Relier CNF à (:Microservices), (:Microservices2), (:Microservices3)
-Relier (:Microservices) à (:Container)
-Relier (:Microservices2) à (:Container2)
-Relier (:Microservices3) à (:Container3)
-Relier (:Container) à (:PhysicalServer)
-Relier (:Container2) à (:PhysicalServer)
-Relier (:Container3) à (:PhysicalServer2)
-Relier (:PhysicalServer) à (:Leaf)
-Relier (:PhysicalServer2) à (:Leaf2)
-Relier (:Leaf) à (:Spine)
-Relier (:Leaf2) à (:Spine) :
-
------------------------------------------------------
-CREATE (:Application)
-CREATE (:CNF)
-CREATE (:Microservices)
-CREATE (:Container)
-CREATE (:PhysicalServer)
-CREATE (:Leaf)
-CREATE (:Spine);
-
-CREATE (:Microservices2)
-CREATE (:Microservices3)
-CREATE (:Container2)
-CREATE (:Container3)
-CREATE (:PhysicalServer2)
-CREATE (:Leaf2);
-
-MATCH (app:Application), (cnf:CNF)
-CREATE (app)-[:CONNECTED_TO]->(cnf);
-
-MATCH (cnf:CNF), (ms1:Microservices), (ms2:Microservices2), (ms3:Microservices3)
-CREATE (cnf)-[:CONTAINS]->(ms1)
-CREATE (cnf)-[:CONTAINS]->(ms2)
-CREATE (cnf)-[:CONTAINS]->(ms3);
-
-MATCH (ms1:Microservices), (c1:Container)
-CREATE (ms1)-[:DEPLOYS]->(c1);
-
-MATCH (ms2:Microservices2), (c2:Container2)
-CREATE (ms2)-[:DEPLOYS]->(c2);
-
-MATCH (ms3:Microservices3), (c3:Container3)
-CREATE (ms3)-[:DEPLOYS]->(c3);
-
-MATCH (c1:Container), (ps1:PhysicalServer)
-CREATE (c1)-[:HOSTED_ON]->(ps1);
-
-MATCH (c2:Container2), (ps1:PhysicalServer)
-CREATE (c2)-[:HOSTED_ON]->(ps1);
-
-MATCH (c3:Container3), (ps2:PhysicalServer2)
-CREATE (c3)-[:HOSTED_ON]->(ps2);
-
-MATCH (ps1:PhysicalServer), (leaf1:Leaf)
-CREATE (ps1)-[:CONNECTED_TO]->(leaf1);
-
-MATCH (ps2:PhysicalServer2), (leaf2:Leaf2)
-CREATE (ps2)-[:CONNECTED_TO]->(leaf2);
-
-MATCH (leaf1:Leaf), (spine:Spine)
-CREATE (leaf1)-[:LINKS_TO]->(spine);
-
-MATCH (leaf2:Leaf2), (spine:Spine)
-CREATE (leaf2)-[:LINKS_TO]->(spine);
-
-----------------------------------------
-
-// Création des nœuds avec des noms uniques
+// Création des nœuds 
 CREATE (app:Application {name: "App1"})
 CREATE (cnf:CNF {name: "CNF1"})
 CREATE (ms1:Microservices {name: "Microservice1"})
@@ -82,7 +13,7 @@ CREATE (leaf1:Leaf {name: "Leaf1"})
 CREATE (leaf2:Leaf {name: "Leaf2"})
 CREATE (spine:Spine {name: "Spine1"});
 
-// Création des relations en évitant les produits cartésiens
+// Création des relations
 MATCH (app:Application {name: "App1"})
 MATCH (cnf:CNF {name: "CNF1"})
 CREATE (app)-[:CONNECTED_TO]->(cnf);
@@ -148,7 +79,9 @@ WITH leaf2
 MATCH (spine:Spine {name: "Spine1"})
 CREATE (leaf2)-[:LINKS_TO]->(spine);
 
-// Graphique
-MATCH (n) RETURN n
+// Affichage des nœuds et leurs relations
+MATCH (n)-[r]->(m)
+RETURN n, r, m LIMIT 100;
 
+// Suppression
 MATCH (n) DETACH DELETE n;
