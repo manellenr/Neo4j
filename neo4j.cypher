@@ -85,3 +85,6 @@ RETURN n, r, m LIMIT 100;
 
 // Suppression
 MATCH (n) DETACH DELETE n;
+
+// Cas d'usage réel
+
