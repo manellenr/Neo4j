@@ -176,3 +176,6 @@ CREATE (c6)-[:HOSTED_ON]->(s28);
 // Affichage des nœuds et leurs relations
 MATCH (n)-[r]->(m)
 RETURN n, r, m LIMIT 100;
+
+// Suppression
+MATCH (n) DETACH DELETE n;
