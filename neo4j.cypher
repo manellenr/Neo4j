@@ -1,3 +1,4 @@
+// Partie 1
 // Création des nœuds 
 CREATE (app:Application {name: "App1"})
 CREATE (cnf:CNF {name: "CNF1"})
@@ -86,5 +87,92 @@ RETURN n, r, m LIMIT 100;
 // Suppression
 MATCH (n) DETACH DELETE n;
 
+// Partie 2
 // Cas d'usage réel
 
+// Partie 2
+// Création des nœuds
+CREATE (cnf:CNF {name: "UPF"});
+
+CREATE (ms1:Microservices {name: "UPF LB1"});
+CREATE (ms2:Microservices {name: "UPF DB"});
+CREATE (ms3:Microservices {name: "UPF MG1"});
+CREATE (ms4:Microservices {name: "UPF MG2"});
+CREATE (ms5:Microservices {name: "UPF LB2"});
+CREATE (ms6:Microservices {name: "UPF MG3"});
+
+CREATE (c1:Container {name: "UPF LB1 POD"});
+CREATE (c2:Container {name: "UPF DB Proxy"});
+CREATE (c3:Container {name: "UPF MG1 POD"});
+CREATE (c4:Container {name: "UPF MG2 POD"});
+CREATE (c5:Container {name: "UPF LB2 POD"});
+CREATE (c6:Container {name: "UPF MG3 POD"});
+
+CREATE (s4:PhysicalServer {name: "Server4"});
+CREATE (s9:PhysicalServer {name: "Server9"});
+CREATE (s10:PhysicalServer {name: "Server10"});
+CREATE (s11:PhysicalServer {name: "Server11"});
+CREATE (s12:PhysicalServer {name: "Server12"});
+CREATE (s13:PhysicalServer {name: "Server13"});
+CREATE (s16:PhysicalServer {name: "Server16"});
+CREATE (s17:PhysicalServer {name: "Server17"});
+CREATE (s22:PhysicalServer {name: "Server22"});
+CREATE (s23:PhysicalServer {name: "Server23"});
+CREATE (s26:PhysicalServer {name: "Server26"});
+CREATE (s28:PhysicalServer {name: "Server28"});
+
+// Création des relations
+MATCH (cnf:CNF {name: "UPF"}), (ms1:Microservices {name: "UPF LB1"})
+CREATE (cnf)-[:CONTAINS]->(ms1);
+MATCH (cnf:CNF {name: "UPF"}), (ms2:Microservices {name: "UPF DB"})
+CREATE (cnf)-[:CONTAINS]->(ms2);
+MATCH (cnf:CNF {name: "UPF"}), (ms3:Microservices {name: "UPF MG1"})
+CREATE (cnf)-[:CONTAINS]->(ms3);
+MATCH (cnf:CNF {name: "UPF"}), (ms4:Microservices {name: "UPF MG2"})
+CREATE (cnf)-[:CONTAINS]->(ms4);
+MATCH (cnf:CNF {name: "UPF"}), (ms5:Microservices {name: "UPF LB2"})
+CREATE (cnf)-[:CONTAINS]->(ms5);
+MATCH (cnf:CNF {name: "UPF"}), (ms6:Microservices {name: "UPF MG3"})
+CREATE (cnf)-[:CONTAINS]->(ms6);
+
+MATCH (ms1:Microservices {name: "UPF LB1"}), (c1:Container {name: "UPF LB1 POD"})
+CREATE (ms1)-[:DEPLOYS]->(c1);
+MATCH (ms2:Microservices {name: "UPF DB"}), (c2:Container {name: "UPF DB Proxy"})
+CREATE (ms2)-[:DEPLOYS]->(c2);
+MATCH (ms3:Microservices {name: "UPF MG1"}), (c3:Container {name: "UPF MG1 POD"})
+CREATE (ms3)-[:DEPLOYS]->(c3);
+MATCH (ms4:Microservices {name: "UPF MG2"}), (c4:Container {name: "UPF MG2 POD"})
+CREATE (ms4)-[:DEPLOYS]->(c4);
+MATCH (ms5:Microservices {name: "UPF LB2"}), (c5:Container {name: "UPF LB2 POD"})
+CREATE (ms5)-[:DEPLOYS]->(c5);
+MATCH (ms6:Microservices {name: "UPF MG3"}), (c6:Container {name: "UPF MG3 POD"})
+CREATE (ms6)-[:DEPLOYS]->(c6);
+
+MATCH (c1:Container {name: "UPF LB1 POD"}), (s4:PhysicalServer {name: "Server4"})
+CREATE (c1)-[:HOSTED_ON]->(s4);
+MATCH (c2:Container {name: "UPF DB Proxy"}), (s9:PhysicalServer {name: "Server9"})
+CREATE (c2)-[:HOSTED_ON]->(s9);
+MATCH (c2:Container {name: "UPF DB Proxy"}), (s10:PhysicalServer {name: "Server10"})
+CREATE (c2)-[:HOSTED_ON]->(s10);
+MATCH (c1:Container {name: "UPF LB1 POD"}), (s11:PhysicalServer {name: "Server11"})
+CREATE (c1)-[:HOSTED_ON]->(s11);
+MATCH (c3:Container {name: "UPF MG1 POD"}), (s12:PhysicalServer {name: "Server12"})
+CREATE (c3)-[:HOSTED_ON]->(s12);
+MATCH (c4:Container {name: "UPF MG2 POD"}), (s13:PhysicalServer {name: "Server13"})
+CREATE (c4)-[:HOSTED_ON]->(s13);
+MATCH (c5:Container {name: "UPF LB2 POD"}), (s16:PhysicalServer {name: "Server16"})
+CREATE (c5)-[:HOSTED_ON]->(s16);
+MATCH (c6:Container {name: "UPF MG3 POD"}), (s17:PhysicalServer {name: "Server17"})
+CREATE (c6)-[:HOSTED_ON]->(s17);
+MATCH (c3:Container {name: "UPF MG1 POD"}), (s22:PhysicalServer {name: "Server22"})
+CREATE (c3)-[:HOSTED_ON]->(s22);
+MATCH (c4:Container {name: "UPF MG2 POD"}), (s23:PhysicalServer {name: "Server23"})
+CREATE (c4)-[:HOSTED_ON]->(s23);
+MATCH (c5:Container {name: "UPF LB2 POD"}), (s26:PhysicalServer {name: "Server26"})
+CREATE (c5)-[:HOSTED_ON]->(s26);
+MATCH (c6:Container {name: "UPF MG3 POD"}), (s28:PhysicalServer {name: "Server28"})
+CREATE (c6)-[:HOSTED_ON]->(s28);
+
+// Affichage des nœuds et leurs relations
+MATCH (n)-[r]->(m)
+RETURN n, r, m LIMIT 100;
