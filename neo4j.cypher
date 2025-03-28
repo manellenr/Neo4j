@@ -100,6 +100,8 @@ CREATE (ms3:Microservices {name: "UPF MG1"});
 CREATE (ms4:Microservices {name: "UPF MG2"});
 CREATE (ms5:Microservices {name: "UPF LB2"});
 CREATE (ms6:Microservices {name: "UPF MG3"});
+CREATE (ms7:Microservices {name: "UPF OAM1"});
+CREATE (ms8:Microservices {name: "UPF OAM2"});
 
 CREATE (c1:Container {name: "UPF LB1 POD"});
 CREATE (c2:Container {name: "UPF DB Proxy"});
@@ -120,6 +122,10 @@ CREATE (s22:PhysicalServer {name: "Server22"});
 CREATE (s23:PhysicalServer {name: "Server23"});
 CREATE (s26:PhysicalServer {name: "Server26"});
 CREATE (s28:PhysicalServer {name: "Server28"});
+CREATE (s14:PhysicalServer {name: "Server14"});
+CREATE (s15:PhysicalServer {name: "Server15"});
+CREATE (s24:PhysicalServer {name: "Server24"});
+CREATE (s25:PhysicalServer {name: "Server25"});
 
 // Création des relations
 MATCH (cnf:CNF {name: "UPF"}), (ms1:Microservices {name: "UPF LB1"})
@@ -134,6 +140,10 @@ MATCH (cnf:CNF {name: "UPF"}), (ms5:Microservices {name: "UPF LB2"})
 CREATE (cnf)-[:CONTAINS]->(ms5);
 MATCH (cnf:CNF {name: "UPF"}), (ms6:Microservices {name: "UPF MG3"})
 CREATE (cnf)-[:CONTAINS]->(ms6);
+MATCH (cnf:CNF {name: "UPF"}), (ms7:Microservices {name: "UPF OAM1"})
+CREATE (cnf)-[:CONTAINS]->(ms7);
+MATCH (cnf:CNF {name: "UPF"}), (ms8:Microservices {name: "UPF OAM2"})
+CREATE (cnf)-[:CONTAINS]->(ms8);
 
 MATCH (ms1:Microservices {name: "UPF LB1"}), (c1:Container {name: "UPF LB1 POD"})
 CREATE (ms1)-[:DEPLOYS]->(c1);
@@ -172,6 +182,14 @@ MATCH (c5:Container {name: "UPF LB2 POD"}), (s26:PhysicalServer {name: "Server26
 CREATE (c5)-[:HOSTED_ON]->(s26);
 MATCH (c6:Container {name: "UPF MG3 POD"}), (s28:PhysicalServer {name: "Server28"})
 CREATE (c6)-[:HOSTED_ON]->(s28);
+MATCH (ms7:Microservices {name: "UPF OAM1"}), (s14:PhysicalServer {name: "Server14"})
+CREATE (ms7)-[:DEPLOYED_ON]->(s14);
+MATCH (ms8:Microservices {name: "UPF OAM2"}), (s15:PhysicalServer {name: "Server15"})
+CREATE (ms8)-[:DEPLOYED_ON]->(s15);
+MATCH (ms7:Microservices {name: "UPF OAM1"}), (s24:PhysicalServer {name: "Server24"})
+CREATE (ms7)-[:DEPLOYED_ON]->(s24);
+MATCH (ms8:Microservices {name: "UPF OAM2"}), (s25:PhysicalServer {name: "Server25"})
+CREATE (ms8)-[:DEPLOYED_ON]->(s25);
 
 // Affichage des nœuds et leurs relations
 MATCH (n)-[r]->(m)
