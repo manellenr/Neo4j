@@ -20,6 +20,8 @@
 
 ![Screenshot from 2025-03-27 11-30-40](https://github.com/user-attachments/assets/40e5f273-545f-46d8-be7f-8966cd379d55)
 
+![Screenshot from 2025-03-28 09-40-56](https://github.com/user-attachments/assets/8732d6a5-844c-445c-a3d3-5a60a10d64d9)
+
 ### Part 2 : zoom
 
 ![Screenshot from 2025-03-27 11-38-03](https://github.com/user-attachments/assets/10f43027-7770-470a-9034-5c172859ba65)
@@ -29,6 +31,8 @@
 ![Screenshot from 2025-03-27 11-39-15](https://github.com/user-attachments/assets/19166e0e-3467-4c48-b7fe-e3785e44fa85)
 
 ![Screenshot from 2025-03-27 11-40-17](https://github.com/user-attachments/assets/91d5bc8e-d9e4-429c-bd3b-2bb0b87f4f3b)
+
+![Screenshot from 2025-03-28 09-39-51](https://github.com/user-attachments/assets/91a670f0-d6cc-42a6-9482-b28d9da66bb8)
 
 ## Part 3
 
