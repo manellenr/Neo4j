@@ -95,24 +95,24 @@ CREATE (cnf:CNF {name: "UPF"});
 
 // Création des niveaux intermédiaires
 CREATE (lbGroup:Microservices {name: "UPF LB"});
-CREATE (mgGroup:Microservices {name: "UPF MG"});
 CREATE (oamGroup:Microservices {name: "UPF OAM"});
+CREATE (mgGroup:Microservices {name: "UPF MG"});
 
 CREATE (ms1:Microservices {name: "UPF LB1"});
 CREATE (ms5:Microservices {name: "UPF LB2"});
-CREATE (ms3:Microservices {name: "UPF MG1"});
-CREATE (ms4:Microservices {name: "UPF MG2"});
-CREATE (ms6:Microservices {name: "UPF MG3"});
 CREATE (ms7:Microservices {name: "UPF OAM1"});
 CREATE (ms8:Microservices {name: "UPF OAM2"});
 CREATE (ms2:Microservices {name: "UPF DB"});
+CREATE (ms3:Microservices {name: "UPF MG1"});
+CREATE (ms4:Microservices {name: "UPF MG2"});
+CREATE (ms6:Microservices {name: "UPF MG3"});
 
 CREATE (c1:Container {name: "UPF LB1 POD"});
+CREATE (c5:Container {name: "UPF LB2 POD"});
 CREATE (c2:Container {name: "UPF DB Proxy"});
 CREATE (c7:Container {name: "UPF DB POD"}); // nouveau conteneur
 CREATE (c3:Container {name: "UPF MG1 POD"});
 CREATE (c4:Container {name: "UPF MG2 POD"});
-CREATE (c5:Container {name: "UPF LB2 POD"});
 CREATE (c6:Container {name: "UPF MG3 POD"});
 
 CREATE (s4:PhysicalServer {name: "Server4"});
@@ -135,12 +135,12 @@ CREATE (s25:PhysicalServer {name: "Server25"});
 // Création des relations
 MATCH (cnf:CNF {name: "UPF"}), (lbGroup:Microservices {name: "UPF LB"})
 CREATE (cnf)-[:CONTAINS]->(lbGroup);
-MATCH (cnf:CNF {name: "UPF"}), (mgGroup:Microservices {name: "UPF MG"})
-CREATE (cnf)-[:CONTAINS]->(mgGroup);
 MATCH (cnf:CNF {name: "UPF"}), (oamGroup:Microservices {name: "UPF OAM"})
 CREATE (cnf)-[:CONTAINS]->(oamGroup);
 MATCH (cnf:CNF {name: "UPF"}), (ms2:Microservices {name: "UPF DB"})
 CREATE (cnf)-[:CONTAINS]->(ms2);
+MATCH (cnf:CNF {name: "UPF"}), (mgGroup:Microservices {name: "UPF MG"})
+CREATE (cnf)-[:CONTAINS]->(mgGroup);
 
 // Relier les sous-niveaux
 MATCH (lbGroup:Microservices {name: "UPF LB"})
@@ -148,6 +148,12 @@ MATCH (ms1:Microservices {name: "UPF LB1"})
 MATCH (ms5:Microservices {name: "UPF LB2"})
 CREATE (lbGroup)-[:CONTAINS]->(ms1),
        (lbGroup)-[:CONTAINS]->(ms5);
+
+MATCH (oamGroup:Microservices {name: "UPF OAM"})
+MATCH (ms7:Microservices {name: "UPF OAM1"})
+MATCH (ms8:Microservices {name: "UPF OAM2"})
+CREATE (oamGroup)-[:CONTAINS]->(ms7),
+       (oamGroup)-[:CONTAINS]->(ms8);
 
 MATCH (mgGroup:Microservices {name: "UPF MG"})
 MATCH (ms3:Microservices {name: "UPF MG1"})
@@ -157,26 +163,20 @@ CREATE (mgGroup)-[:CONTAINS]->(ms3),
        (mgGroup)-[:CONTAINS]->(ms4),
        (mgGroup)-[:CONTAINS]->(ms6);
 
-MATCH (oamGroup:Microservices {name: "UPF OAM"})
-MATCH (ms7:Microservices {name: "UPF OAM1"})
-MATCH (ms8:Microservices {name: "UPF OAM2"})
-CREATE (oamGroup)-[:CONTAINS]->(ms7),
-       (oamGroup)-[:CONTAINS]->(ms8);
-
 // Déploiement des microservices dans des conteneurs
 MATCH (ms1:Microservices {name: "UPF LB1"}), (c1:Container {name: "UPF LB1 POD"})
 CREATE (ms1)-[:DEPLOYS]->(c1);
 MATCH (ms5:Microservices {name: "UPF LB2"}), (c5:Container {name: "UPF LB2 POD"})
 CREATE (ms5)-[:DEPLOYS]->(c5);
+MATCH (ms2:Microservices {name: "UPF DB"}), (c2:Container {name: "UPF DB Proxy"}), (c7:Container {name: "UPF DB POD"})
+CREATE (ms2)-[:DEPLOYS]->(c2),
+       (ms2)-[:DEPLOYS]->(c7);
 MATCH (ms3:Microservices {name: "UPF MG1"}), (c3:Container {name: "UPF MG1 POD"})
 CREATE (ms3)-[:DEPLOYS]->(c3);
 MATCH (ms4:Microservices {name: "UPF MG2"}), (c4:Container {name: "UPF MG2 POD"})
 CREATE (ms4)-[:DEPLOYS]->(c4);
 MATCH (ms6:Microservices {name: "UPF MG3"}), (c6:Container {name: "UPF MG3 POD"})
 CREATE (ms6)-[:DEPLOYS]->(c6);
-MATCH (ms2:Microservices {name: "UPF DB"}), (c2:Container {name: "UPF DB Proxy"}), (c7:Container {name: "UPF DB POD"})
-CREATE (ms2)-[:DEPLOYS]->(c2),
-       (ms2)-[:DEPLOYS]->(c7);
 
 // Hébergement des conteneurs sur les serveurs
 MATCH (c1:Container {name: "UPF LB1 POD"}), (s4:PhysicalServer {name: "Server4"})
@@ -213,7 +213,6 @@ CREATE (ms8)-[:DEPLOYED_ON]->(s15),
 // Affichage des nœuds et leurs relations
 MATCH (n)-[r]->(m)
 RETURN n, r, m LIMIT 100;
-
 
 // Suppression
 MATCH (n) DETACH DELETE n;
