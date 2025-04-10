@@ -59,9 +59,6 @@ Ajouter au code
 
 ![Screenshot from 2025-03-18 10-06-29](https://github.com/user-attachments/assets/469fe435-e0e1-43b7-8159-4065cff958ff)
 
-![Screenshot from 2025-03-18 10-07-10](https://github.com/user-attachments/assets/87366d59-76b5-4586-80d3-a536bb7eadbe)
-
-![Screenshot from 2025-03-27 11-31-56](https://github.com/user-attachments/assets/8edb4531-a41a-44e6-94cc-eaf441447c4e)
 
 ## Part 2
 
