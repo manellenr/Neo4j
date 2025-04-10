@@ -1,4 +1,7 @@
-// Partie 1
+/////////////////////////////////////////////////////////////////
+////////////////////////// Partie 1 /////////////////////////////
+/////////////////////////////////////////////////////////////////
+
 // Création des nœuds 
 CREATE (app:Application {name: "App1"})
 CREATE (cnf:CNF {name: "CNF1"})
@@ -19,8 +22,10 @@ MATCH (app:Application {name: "App1"})
 MATCH (cnf:CNF {name: "CNF1"})
 CREATE (app)-[:CONNECTED_TO]->(cnf);
 
+
 MATCH (cnf:CNF {name: "CNF1"})
 WITH cnf
+
 
 MATCH (ms1:Microservices {name: "Microservice1"})
 CREATE (cnf)-[:CONTAINS]->(ms1)
@@ -30,6 +35,7 @@ CREATE (cnf)-[:CONTAINS]->(ms2)
 WITH cnf
 MATCH (ms3:Microservices {name: "Microservice3"})
 CREATE (cnf)-[:CONTAINS]->(ms3);
+
 
 MATCH (ms1:Microservices {name: "Microservice1"})
 WITH ms1
@@ -46,6 +52,7 @@ WITH ms3
 MATCH (c3:Container {name: "Container3"})
 CREATE (ms3)-[:DEPLOYS]->(c3);
 
+
 MATCH (c1:Container {name: "Container1"})
 WITH c1
 MATCH (ps1:PhysicalServer {name: "PhysicalServer1"})
@@ -61,6 +68,7 @@ WITH c3
 MATCH (ps2:PhysicalServer {name: "PhysicalServer2"})
 CREATE (c3)-[:HOSTED_ON]->(ps2);
 
+
 MATCH (ps1:PhysicalServer {name: "PhysicalServer1"})
 WITH ps1
 MATCH (leaf1:Leaf {name: "Leaf1"})
@@ -70,6 +78,7 @@ MATCH (ps2:PhysicalServer {name: "PhysicalServer2"})
 WITH ps2
 MATCH (leaf2:Leaf {name: "Leaf2"})
 CREATE (ps2)-[:CONNECTED_TO]->(leaf2);
+
 
 MATCH (leaf1:Leaf {name: "Leaf1"})
 WITH leaf1
@@ -88,8 +97,9 @@ RETURN n, r, m LIMIT 100;
 // Suppression
 MATCH (n) DETACH DELETE n;
 
-// Partie 2
-// Cas d'usage réel
+/////////////////////////////////////////////////////////////////
+////////////////////////// Partie 2 /////////////////////////////
+/////////////////////////////////////////////////////////////////
 
 // Création des nœuds
 CREATE (cnf:CNF {name: "UPF"});
@@ -212,6 +222,20 @@ CREATE (ms8)-[:DEPLOYED_ON]->(s15),
        (ms8)-[:DEPLOYED_ON]->(s25);
 
 // Affichage des nœuds et leurs relations
+MATCH (n)-[r]->(m)
+RETURN n, r, m LIMIT 100;
+
+// Suppression
+MATCH (n) DETACH DELETE n;
+
+/////////////////////////////////////////////////////////////////
+////////////////////////// Partie 3 /////////////////////////////
+/////////////////////////////////////////////////////////////////
+
+
+
+
+/// Affichage des nœuds et leurs relations
 MATCH (n)-[r]->(m)
 RETURN n, r, m LIMIT 100;
 
