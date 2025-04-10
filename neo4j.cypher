@@ -423,7 +423,18 @@ MATCH (smf_lb2_pod), (s15), (s25)
 CREATE (smf_lb2_pod)-[:HOSTED_ON]->(s15),
        (smf_lb2_pod)-[:HOSTED_ON]->(s25);
 
-/// Affichage des nœuds et leurs relations
+// Affichage des nœuds et leurs relations
+MATCH (n)-[r]->(m)
+RETURN n, r, m LIMIT 100;
+
+// Suppression
+MATCH (n) DETACH DELETE n;
+
+/////////////////////////////////////////////////////////////////
+////////////////////////// Partie 4 /////////////////////////////
+/////////////////////////////////////////////////////////////////
+
+// Affichage des nœuds et leurs relations
 MATCH (n)-[r]->(m)
 RETURN n, r, m LIMIT 100;
 
