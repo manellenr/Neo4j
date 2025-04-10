@@ -21,6 +21,7 @@ CREATE (app)-[:CONNECTED_TO]->(cnf);
 
 MATCH (cnf:CNF {name: "CNF1"})
 WITH cnf
+
 MATCH (ms1:Microservices {name: "Microservice1"})
 CREATE (cnf)-[:CONTAINS]->(ms1)
 WITH cnf
