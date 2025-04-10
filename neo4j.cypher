@@ -434,6 +434,116 @@ MATCH (n) DETACH DELETE n;
 ////////////////////////// Partie 4 /////////////////////////////
 /////////////////////////////////////////////////////////////////
 
+// Création du CNF
+CREATE (cnf2:CNF {name: "SMF"});
+
+// Création des groupes de microservices pour SMF
+CREATE (smf_lb:Microservices {name: "SMF LB"});
+CREATE (smf_oam:Microservices {name: "SMF OAM"});
+CREATE (smf_mg:Microservices {name: "SMF MG"});
+CREATE (smf_db:Microservices {name: "SMF DB"});
+
+CREATE (smf_mg1:Microservices {name: "SMF MG1"});
+CREATE (smf_mg2:Microservices {name: "SMF MG2"});
+CREATE (smf_mg3:Microservices {name: "SMF MG3"});
+CREATE (smf_oam1:Microservices {name: "SMF OAM1"});
+CREATE (smf_oam2:Microservices {name: "SMF OAM2"});
+CREATE (smf_lb1:Microservices {name: "SMF LB1"});
+CREATE (smf_lb2:Microservices {name: "SMF LB2"});
+
+// Conteneurs SMF
+CREATE (smf_mg1_pod:Container {name: "SMF MG1 POD"});
+CREATE (smf_mg2_pod:Container {name: "SMF MG2 POD"});
+CREATE (smf_mg3_pod:Container {name: "SMF MG3 POD"});
+CREATE (smf_db_proxy:Container {name: "SMF DB Proxy"});
+CREATE (smf_oam1_proxy:Container {name: "SMF OAM1 Proxy"});
+CREATE (smf_oam2_proxy:Container {name: "SMF OAM2 Proxy"});
+CREATE (smf_lb1_pod:Container {name: "SMF LB1 POD"});
+CREATE (smf_lb2_pod:Container {name: "SMF LB2 POD"});
+
+// Serveurs physiques
+CREATE (s4:PhysicalServer {name: "Server4"});
+CREATE (s9:PhysicalServer {name: "Server9"});
+CREATE (s10:PhysicalServer {name: "Server10"});
+CREATE (s11:PhysicalServer {name: "Server11"});
+CREATE (s12:PhysicalServer {name: "Server12"});
+CREATE (s13:PhysicalServer {name: "Server13"});
+CREATE (s14:PhysicalServer {name: "Server14"});
+CREATE (s15:PhysicalServer {name: "Server15"});
+CREATE (s16:PhysicalServer {name: "Server16"});
+CREATE (s17:PhysicalServer {name: "Server17"});
+CREATE (s22:PhysicalServer {name: "Server22"});
+CREATE (s23:PhysicalServer {name: "Server23"});
+CREATE (s24:PhysicalServer {name: "Server24"});
+CREATE (s25:PhysicalServer {name: "Server25"});
+CREATE (s26:PhysicalServer {name: "Server26"});
+CREATE (s28:PhysicalServer {name: "Server28"});
+
+// Relations SMF
+MATCH (cnf2:CNF {name: "SMF"})
+MATCH (smf_lb), (smf_oam), (smf_mg), (smf_db)
+CREATE (cnf2)-[:CONTAINS]->(smf_lb),
+       (cnf2)-[:CONTAINS]->(smf_oam),
+       (cnf2)-[:CONTAINS]->(smf_mg),
+       (cnf2)-[:CONTAINS]->(smf_db);
+
+MATCH (smf_mg), (smf_mg1), (smf_mg2), (smf_mg3)
+CREATE (smf_mg)-[:CONTAINS]->(smf_mg1),
+       (smf_mg)-[:CONTAINS]->(smf_mg2),
+       (smf_mg)-[:CONTAINS]->(smf_mg3);
+
+MATCH (smf_mg1), (smf_mg1_pod)
+CREATE (smf_mg1)-[:DEPLOYS]->(smf_mg1_pod);
+MATCH (smf_mg1_pod), (s4), (s11)
+CREATE (smf_mg1_pod)-[:HOSTED_ON]->(s4),
+       (smf_mg1_pod)-[:HOSTED_ON]->(s11);
+
+MATCH (smf_mg2), (smf_mg2_pod)
+CREATE (smf_mg2)-[:DEPLOYS]->(smf_mg2_pod);
+MATCH (smf_mg2_pod), (s16), (s26)
+CREATE (smf_mg2_pod)-[:HOSTED_ON]->(s16),
+       (smf_mg2_pod)-[:HOSTED_ON]->(s26);
+
+MATCH (smf_mg3), (smf_mg3_pod)
+CREATE (smf_mg3)-[:DEPLOYS]->(smf_mg3_pod);
+MATCH (smf_mg3_pod), (s17), (s28)
+CREATE (smf_mg3_pod)-[:HOSTED_ON]->(s17),
+       (smf_mg3_pod)-[:HOSTED_ON]->(s28);
+
+MATCH (smf_db), (smf_db_proxy)
+CREATE (smf_db)-[:DEPLOYS]->(smf_db_proxy);
+MATCH (smf_db_proxy), (s9), (s10)
+CREATE (smf_db_proxy)-[:HOSTED_ON]->(s9),
+       (smf_db_proxy)-[:HOSTED_ON]->(s10);
+
+MATCH (smf_oam), (smf_oam1), (smf_oam2)
+CREATE (smf_oam)-[:CONTAINS]->(smf_oam1),
+       (smf_oam)-[:CONTAINS]->(smf_oam2);
+MATCH (smf_oam1), (smf_oam1_proxy)
+CREATE (smf_oam1)-[:DEPLOYS]->(smf_oam1_proxy);
+MATCH (smf_oam1_proxy), (s12), (s22)
+CREATE (smf_oam1_proxy)-[:HOSTED_ON]->(s12),
+       (smf_oam1_proxy)-[:HOSTED_ON]->(s22);
+MATCH (smf_oam2), (smf_oam2_proxy)
+CREATE (smf_oam2)-[:DEPLOYS]->(smf_oam2_proxy);
+MATCH (smf_oam2_proxy), (s13), (s23)
+CREATE (smf_oam2_proxy)-[:HOSTED_ON]->(s13),
+       (smf_oam2_proxy)-[:HOSTED_ON]->(s23);
+
+MATCH (smf_lb), (smf_lb1), (smf_lb2)
+CREATE (smf_lb)-[:CONTAINS]->(smf_lb1),
+       (smf_lb)-[:CONTAINS]->(smf_lb2);
+MATCH (smf_lb1), (smf_lb1_pod)
+CREATE (smf_lb1)-[:DEPLOYS]->(smf_lb1_pod);
+MATCH (smf_lb1_pod), (s14), (s24)
+CREATE (smf_lb1_pod)-[:HOSTED_ON]->(s14),
+       (smf_lb1_pod)-[:HOSTED_ON]->(s24);
+MATCH (smf_lb2), (smf_lb2_pod)
+CREATE (smf_lb2)-[:DEPLOYS]->(smf_lb2_pod);
+MATCH (smf_lb2_pod), (s15), (s25)
+CREATE (smf_lb2_pod)-[:HOSTED_ON]->(s15),
+       (smf_lb2_pod)-[:HOSTED_ON]->(s25);
+
 // Affichage des nœuds et leurs relations
 MATCH (n)-[r]->(m)
 RETURN n, r, m LIMIT 100;
