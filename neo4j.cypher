@@ -22,10 +22,8 @@ MATCH (app:Application {name: "App1"})
 MATCH (cnf:CNF {name: "CNF1"})
 CREATE (app)-[:CONNECTED_TO]->(cnf);
 
-
 MATCH (cnf:CNF {name: "CNF1"})
 WITH cnf
-
 
 MATCH (ms1:Microservices {name: "Microservice1"})
 CREATE (cnf)-[:CONTAINS]->(ms1)
@@ -35,7 +33,6 @@ CREATE (cnf)-[:CONTAINS]->(ms2)
 WITH cnf
 MATCH (ms3:Microservices {name: "Microservice3"})
 CREATE (cnf)-[:CONTAINS]->(ms3);
-
 
 MATCH (ms1:Microservices {name: "Microservice1"})
 WITH ms1
@@ -52,7 +49,6 @@ WITH ms3
 MATCH (c3:Container {name: "Container3"})
 CREATE (ms3)-[:DEPLOYS]->(c3);
 
-
 MATCH (c1:Container {name: "Container1"})
 WITH c1
 MATCH (ps1:PhysicalServer {name: "PhysicalServer1"})
@@ -68,7 +64,6 @@ WITH c3
 MATCH (ps2:PhysicalServer {name: "PhysicalServer2"})
 CREATE (c3)-[:HOSTED_ON]->(ps2);
 
-
 MATCH (ps1:PhysicalServer {name: "PhysicalServer1"})
 WITH ps1
 MATCH (leaf1:Leaf {name: "Leaf1"})
@@ -78,7 +73,6 @@ MATCH (ps2:PhysicalServer {name: "PhysicalServer2"})
 WITH ps2
 MATCH (leaf2:Leaf {name: "Leaf2"})
 CREATE (ps2)-[:CONNECTED_TO]->(leaf2);
-
 
 MATCH (leaf1:Leaf {name: "Leaf1"})
 WITH leaf1
@@ -101,10 +95,9 @@ MATCH (n) DETACH DELETE n;
 ////////////////////////// Partie 2 /////////////////////////////
 /////////////////////////////////////////////////////////////////
 
-// Création des nœuds
+// Création des nœuds 
 CREATE (cnf:CNF {name: "UPF"});
 
-// Création des niveaux intermédiaires
 CREATE (lbGroup:Microservices {name: "UPF LB"});
 CREATE (oamGroup:Microservices {name: "UPF OAM"});
 CREATE (mgGroup:Microservices {name: "UPF MG"});
@@ -121,7 +114,7 @@ CREATE (ms6:Microservices {name: "UPF MG3"});
 CREATE (c1:Container {name: "UPF LB1 POD"});
 CREATE (c5:Container {name: "UPF LB2 POD"});
 CREATE (c2:Container {name: "UPF DB Proxy"});
-CREATE (c7:Container {name: "UPF DB POD"}); // nouveau conteneur
+CREATE (c7:Container {name: "UPF DB POD"});
 CREATE (c3:Container {name: "UPF MG1 POD"});
 CREATE (c4:Container {name: "UPF MG2 POD"});
 CREATE (c6:Container {name: "UPF MG3 POD"});
@@ -153,7 +146,6 @@ CREATE (cnf)-[:CONTAINS]->(ms2);
 MATCH (cnf:CNF {name: "UPF"}), (mgGroup:Microservices {name: "UPF MG"})
 CREATE (cnf)-[:CONTAINS]->(mgGroup);
 
-// Relier les sous-niveaux
 MATCH (lbGroup:Microservices {name: "UPF LB"})
 MATCH (ms1:Microservices {name: "UPF LB1"})
 MATCH (ms5:Microservices {name: "UPF LB2"})
@@ -174,7 +166,6 @@ CREATE (mgGroup)-[:CONTAINS]->(ms3),
        (mgGroup)-[:CONTAINS]->(ms4),
        (mgGroup)-[:CONTAINS]->(ms6);
 
-// Déploiement des microservices dans des conteneurs
 MATCH (ms1:Microservices {name: "UPF LB1"}), (c1:Container {name: "UPF LB1 POD"})
 CREATE (ms1)-[:DEPLOYS]->(c1);
 MATCH (ms5:Microservices {name: "UPF LB2"}), (c5:Container {name: "UPF LB2 POD"})
@@ -189,7 +180,6 @@ CREATE (ms4)-[:DEPLOYS]->(c4);
 MATCH (ms6:Microservices {name: "UPF MG3"}), (c6:Container {name: "UPF MG3 POD"})
 CREATE (ms6)-[:DEPLOYS]->(c6);
 
-// Hébergement des conteneurs sur les serveurs
 MATCH (c1:Container {name: "UPF LB1 POD"}), (s4:PhysicalServer {name: "Server4"})
 CREATE (c1)-[:HOSTED_ON]->(s4);
 MATCH (c1:Container {name: "UPF LB1 POD"}), (s11:PhysicalServer {name: "Server11"})
@@ -213,7 +203,6 @@ MATCH (c6:Container {name: "UPF MG3 POD"}), (s17:PhysicalServer {name: "Server17
 CREATE (c6)-[:HOSTED_ON]->(s17),
        (c6)-[:HOSTED_ON]->(s28);
 
-// Déploiement direct des microservices OAM sur des serveurs
 MATCH (ms7:Microservices {name: "UPF OAM1"}), (s14:PhysicalServer {name: "Server14"}), (s24:PhysicalServer {name: "Server24"})
 CREATE (ms7)-[:DEPLOYED_ON]->(s14),
        (ms7)-[:DEPLOYED_ON]->(s24);
@@ -232,10 +221,9 @@ MATCH (n) DETACH DELETE n;
 ////////////////////////// Partie 3 /////////////////////////////
 /////////////////////////////////////////////////////////////////
 
-// Création du CNF
+// Création des nœuds 
 CREATE (cnf2:CNF {name: "SMF"});
 
-// Création des groupes de microservices pour SMF
 CREATE (smf_lb:Microservices {name: "SMF LB"});
 CREATE (smf_oam:Microservices {name: "SMF OAM"});
 CREATE (smf_mg:Microservices {name: "SMF MG"});
@@ -249,7 +237,6 @@ CREATE (smf_oam2:Microservices {name: "SMF OAM2"});
 CREATE (smf_lb1:Microservices {name: "SMF LB1"});
 CREATE (smf_lb2:Microservices {name: "SMF LB2"});
 
-// Conteneurs SMF
 CREATE (smf_mg1_pod:Container {name: "SMF MG1 POD"});
 CREATE (smf_mg2_pod:Container {name: "SMF MG2 POD"});
 CREATE (smf_mg3_pod:Container {name: "SMF MG3 POD"});
@@ -259,7 +246,6 @@ CREATE (smf_oam2_proxy:Container {name: "SMF OAM2 Proxy"});
 CREATE (smf_lb1_pod:Container {name: "SMF LB1 POD"});
 CREATE (smf_lb2_pod:Container {name: "SMF LB2 POD"});
 
-// Serveurs physiques
 CREATE (s4:PhysicalServer {name: "Server4"});
 CREATE (s9:PhysicalServer {name: "Server9"});
 CREATE (s10:PhysicalServer {name: "Server10"});
@@ -277,6 +263,7 @@ CREATE (s25:PhysicalServer {name: "Server25"});
 CREATE (s26:PhysicalServer {name: "Server26"});
 CREATE (s28:PhysicalServer {name: "Server28"});
 
+// Création des relations
 MATCH (cnf:CNF {name: "SMF"}), 
       (oamGroup:Microservices {name: "SMF OAM"}), 
       (mgGroup:Microservices {name: "SMF MG"}), 
@@ -299,7 +286,6 @@ MATCH (dbGroup:Microservices {name: "SMF DB"}),
       (ms:Container {name: "SMF DB Proxy"})
 CREATE (dbGroup)-[:CONTAINS]->(ms);
 
-
 MATCH (oamGroup:Microservices {name: "SMF OAM"}), 
       (ms1:Microservices {name: "SMF OAM1"}), 
       (ms2:Microservices {name: "SMF OAM2"})
@@ -311,8 +297,7 @@ MATCH (lbGroup:Microservices {name: "SMF LB"}),
       (ms2:Microservices {name: "SMF LB2"})
 CREATE (lbGroup)-[:CONTAINS]->(ms1),
        (lbGroup)-[:CONTAINS]->(ms2);
-       
-       
+            
 CREATE (smf_db_pod:Container {name: "SMF DB POD"});
 
 MATCH (pod1:Container {name: "SMF MG1 POD"}), (ms1:Microservices {name: "SMF MG1"})
