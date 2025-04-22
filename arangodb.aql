@@ -1,127 +1,86 @@
-/////////////////////////////////////////////////////////////////
-////////////////////////// Partie 2 /////////////////////////////
-/////////////////////////////////////////////////////////////////
+CREATE COLLECTION CNF;
+CREATE COLLECTION Microservices;
+CREATE COLLECTION Container;
+CREATE COLLECTION PhysicalServer;
+CREATE EDGE COLLECTION Relations;
 
-// Création des documents
+INSERT { _key: "UPF", name: "UPF" } INTO CNF;
 
-INSERT { _key: "UPF", name: "UPF" } INTO CNF
+LET lbGroup = INSERT { _key: "UPF_LB", name: "UPF LB" } INTO Microservices RETURN NEW
+LET oamGroup = INSERT { _key: "UPF_OAM", name: "UPF OAM" } INTO Microservices RETURN NEW
+LET mgGroup = INSERT { _key: "UPF_MG", name: "UPF MG" } INTO Microservices RETURN NEW
 
-INSERT { _key: "UPF_LB", name: "UPF LB" } INTO Microservices
-INSERT { _key: "UPF_OAM", name: "UPF OAM" } INTO Microservices
-INSERT { _key: "UPF_MG", name: "UPF MG" } INTO Microservices
+INSERT { _key: "UPF_LB1", name: "UPF LB1" } INTO Microservices;
+INSERT { _key: "UPF_LB2", name: "UPF LB2" } INTO Microservices;
+INSERT { _key: "UPF_OAM1", name: "UPF OAM1" } INTO Microservices;
+INSERT { _key: "UPF_OAM2", name: "UPF OAM2" } INTO Microservices;
+INSERT { _key: "UPF_DB", name: "UPF DB" } INTO Microservices;
+INSERT { _key: "UPF_MG1", name: "UPF MG1" } INTO Microservices;
+INSERT { _key: "UPF_MG2", name: "UPF MG2" } INTO Microservices;
+INSERT { _key: "UPF_MG3", name: "UPF MG3" } INTO Microservices;
 
-FOR ms1 IN [
-  { key: "UPF_LB1", name: "UPF LB1" },
-  { key: "UPF_LB2", name: "UPF LB2" },
-  { key: "UPF_OAM1", name: "UPF OAM1" },
-  { key: "UPF_OAM2", name: "UPF OAM2" },
-  { key: "UPF_DB", name: "UPF DB" },
-  { key: "UPF_MG1", name: "UPF MG1" },
-  { key: "UPF_MG2", name: "UPF MG2" },
-  { key: "UPF_MG3", name: "UPF MG3" }
+INSERT { _key: "UPF_LB1_POD", name: "UPF LB1 POD" } INTO Container;
+INSERT { _key: "UPF_LB2_POD", name: "UPF LB2 POD" } INTO Container;
+INSERT { _key: "UPF_DB_Proxy", name: "UPF DB Proxy" } INTO Container;
+INSERT { _key: "UPF_DB_POD", name: "UPF DB POD" } INTO Container;
+INSERT { _key: "UPF_MG1_POD", name: "UPF MG1 POD" } INTO Container;
+INSERT { _key: "UPF_MG2_POD", name: "UPF MG2 POD" } INTO Container;
+INSERT { _key: "UPF_MG3_POD", name: "UPF MG3 POD" } INTO Container;
+
+FOR s IN ["Server4", "Server9", "Server10", "Server11", "Server12", "Server13", "Server14", "Server15", 
+          "Server16", "Server17", "Server22", "Server23", "Server24", "Server25", "Server26", "Server28"]
+  INSERT { _key: s, name: s } INTO PhysicalServer;
+
+INSERT { _from: "CNF/UPF", _to: "Microservices/UPF_LB", type: "CONTAINS" } INTO Relations;
+INSERT { _from: "CNF/UPF", _to: "Microservices/UPF_OAM", type: "CONTAINS" } INTO Relations;
+INSERT { _from: "CNF/UPF", _to: "Microservices/UPF_DB", type: "CONTAINS" } INTO Relations;
+INSERT { _from: "CNF/UPF", _to: "Microservices/UPF_MG", type: "CONTAINS" } INTO Relations;
+
+FOR m IN ["UPF_LB1", "UPF_LB2"]
+  INSERT { _from: "Microservices/UPF_LB", _to: CONCAT("Microservices/", m), type: "CONTAINS" } INTO Relations;
+
+FOR m IN ["UPF_OAM1", "UPF_OAM2"]
+  INSERT { _from: "Microservices/UPF_OAM", _to: CONCAT("Microservices/", m), type: "CONTAINS" } INTO Relations;
+
+FOR m IN ["UPF_MG1", "UPF_MG2", "UPF_MG3"]
+  INSERT { _from: "Microservices/UPF_MG", _to: CONCAT("Microservices/", m), type: "CONTAINS" } INTO Relations;
+
+LET deployments = [
+  ["UPF_LB1", "UPF_LB1_POD"],
+  ["UPF_LB2", "UPF_LB2_POD"],
+  ["UPF_DB", "UPF_DB_Proxy"],
+  ["UPF_DB", "UPF_DB_POD"],
+  ["UPF_MG1", "UPF_MG1_POD"],
+  ["UPF_MG2", "UPF_MG2_POD"],
+  ["UPF_MG3", "UPF_MG3_POD"]
 ]
-INSERT { _key: ms1.key, name: ms1.name } INTO Microservices
+FOR d IN deployments
+  INSERT { _from: CONCAT("Microservices/", d[0]), _to: CONCAT("Container/", d[1]), type: "DEPLOYS" } INTO Relations;
 
-FOR c1 IN [
-  { key: "LB1_POD", name: "UPF LB1 POD" },
-  { key: "LB2_POD", name: "UPF LB2 POD" },
-  { key: "DB_PROXY", name: "UPF DB Proxy" },
-  { key: "DB_POD", name: "UPF DB POD" },
-  { key: "MG1_POD", name: "UPF MG1 POD" },
-  { key: "MG2_POD", name: "UPF MG2 POD" },
-  { key: "MG3_POD", name: "UPF MG3 POD" }
+LET hosting = [
+  ["UPF_LB1_POD", ["Server4", "Server11"]],
+  ["UPF_DB_Proxy", ["Server9", "Server10"]],
+  ["UPF_DB_POD", ["Server9", "Server10"]],
+  ["UPF_MG1_POD", ["Server12", "Server22"]],
+  ["UPF_MG2_POD", ["Server13", "Server23"]],
+  ["UPF_LB2_POD", ["Server16", "Server26"]],
+  ["UPF_MG3_POD", ["Server17", "Server28"]]
 ]
-INSERT { _key: c1.key, name: c1.name } INTO Container
+FOR h IN hosting
+  FOR s IN h[1]
+    INSERT { _from: CONCAT("Container/", h[0]), _to: CONCAT("PhysicalServer/", s), type: "HOSTED_ON" } INTO Relations;
 
-FOR s1 IN [
-  "Server4", "Server9", "Server10", "Server11", "Server12", "Server13",
-  "Server14", "Server15", "Server16", "Server17", "Server22", "Server23",
-  "Server24", "Server25", "Server26", "Server28"
+LET deployed = [
+  ["UPF_OAM1", ["Server14", "Server24"]],
+  ["UPF_OAM2", ["Server15", "Server25"]]
 ]
-INSERT { _key: s1, name: s1 } INTO PhysicalServer
+FOR d IN deployed
+  FOR s IN d[1]
+    INSERT { _from: CONCAT("Microservices/", d[0]), _to: CONCAT("PhysicalServer/", s), type: "DEPLOYED_ON" } INTO Relations;
 
-// Relations CONTAINS
-
-FOR group1 IN ["UPF_LB", "UPF_OAM", "UPF_MG"]
-  INSERT { _from: "CNF/UPF", _to: CONCAT("Microservices/", group1) } INTO CONTAINS
-
-INSERT { _from: "CNF/UPF", _to: "Microservices/UPF_DB" } INTO CONTAINS
-
-LET groupMicroservices = {
-  "UPF_LB": ["UPF_LB1", "UPF_LB2"],
-  "UPF_OAM": ["UPF_OAM1", "UPF_OAM2"],
-  "UPF_MG": ["UPF_MG1", "UPF_MG2", "UPF_MG3"]
-}
-
-FOR grp IN ATTRIBUTES(groupMicroservices)
-  FOR ms2 IN groupMicroservices[grp]
-    INSERT { _from: CONCAT("Microservices/", grp), _to: CONCAT("Microservices/", ms2) } INTO CONTAINS
-
-// Relations DEPLOYS
-
-LET deployMap = {
-  "UPF_LB1": ["LB1_POD"],
-  "UPF_LB2": ["LB2_POD"],
-  "UPF_DB": ["DB_PROXY", "DB_POD"],
-  "UPF_MG1": ["MG1_POD"],
-  "UPF_MG2": ["MG2_POD"],
-  "UPF_MG3": ["MG3_POD"]
-}
-
-FOR ms3 IN ATTRIBUTES(deployMap)
-  FOR pod IN deployMap[ms3]
-    INSERT { _from: CONCAT("Microservices/", ms3), _to: CONCAT("Container/", pod) } INTO DEPLOYS
-
-// Relations HOSTED_ON
-
-LET hostMap = {
-  "LB1_POD": ["Server4", "Server11"],
-  "DB_PROXY": ["Server9", "Server10"],
-  "DB_POD": ["Server9", "Server10"],
-  "MG1_POD": ["Server12", "Server22"],
-  "MG2_POD": ["Server13", "Server23"],
-  "LB2_POD": ["Server16", "Server26"],
-  "MG3_POD": ["Server17", "Server28"]
-}
-
-FOR podKey IN ATTRIBUTES(hostMap)
-  FOR srv IN hostMap[podKey]
-    INSERT { _from: CONCAT("Container/", podKey), _to: CONCAT("PhysicalServer/", srv) } INTO HOSTED_ON
-
-// Relations DEPLOYED_ON
-
-LET deployedMap = {
-  "UPF_OAM1": ["Server14", "Server24"],
-  "UPF_OAM2": ["Server15", "Server25"]
-}
-
-FOR ms4 IN ATTRIBUTES(deployedMap)
-  FOR srv2 IN deployedMap[ms4]
-    INSERT { _from: CONCAT("Microservices/", ms4), _to: CONCAT("PhysicalServer/", srv2) } INTO DEPLOYED_ON
-
-// Affichage de quelques relations CONTAINS
-
-FOR r IN CONTAINS
-  LET fromNode = DOCUMENT(r._from)
-  LET toNode = DOCUMENT(r._to)
-  RETURN { from: fromNode, relation: r, to: toNode }
-LIMIT 100
-
-
-// Graphe
-
-FOR r IN CONTAINS
-  LET fromNode = DOCUMENT(r._from)
-  LET toNode = DOCUMENT(r._to)
-  RETURN { from: fromNode, relation: r, to: toNode }
-
-LIMIT 100
-
-
-Query error: collection or view not found: CNF
-Query error: variable 'groupKey' is assigned multiple times
-
-/////////////////////////////////////////////////////////////////
-////////////////////////// Partie 4 /////////////////////////////
-/////////////////////////////////////////////////////////////////
-
+FOR r IN Relations
+  RETURN {
+    from: DOCUMENT(r._from).name,
+    relation: r.type,
+    to: DOCUMENT(r._to).name
+  }
