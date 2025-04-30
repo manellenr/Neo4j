@@ -24,3 +24,6 @@ Avatar et nœud 1:
 <https://www.manelle.fr/noeud3_test> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelle.fr/noeud2_test>
 
+Ajouter des attributs
+Créer des classes
+Se connecter au graphe à partir d'un script Python
