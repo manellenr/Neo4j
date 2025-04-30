@@ -1,0 +1,26 @@
+Domaine:
+{
+  "expireAfter": -1,
+  "historized": false,
+  "iri": "https://www.manelle.fr"
+}
+
+Avatar et nœud 1:
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/noeud_test>  a ncm:CentralFrequency;
+.
+
+2e nœud:
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/noeud2_test> a ncm:CentralFrequency;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelle.fr/noeud_test>
+
+  .
+
+3e nœud:
+ 
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/noeud3_test> a ncm:CentralFrequency;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelle.fr/noeud2_test>
+
