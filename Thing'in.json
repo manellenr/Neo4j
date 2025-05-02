@@ -1,5 +1,5 @@
-{
-  "nodes": [
+{  "_iri": "https://www.manelle.fr",
+  "_nodes": [
     { "id": "cnf", "label": "CNF", "properties": { "name": "UPF" } },
     { "id": "lbGroup", "label": "Microservices", "properties": { "name": "UPF LB" } },
     { "id": "oamGroup", "label": "Microservices", "properties": { "name": "UPF OAM" } },
@@ -36,7 +36,7 @@
     { "id": "s26", "label": "PhysicalServer", "properties": { "name": "Server26" } },
     { "id": "s28", "label": "PhysicalServer", "properties": { "name": "Server28" } }
   ],
-  "relationships": [
+  "_relationships": [
     { "from": "cnf", "to": "lbGroup", "type": "CONTAINS" },
     { "from": "cnf", "to": "oamGroup", "type": "CONTAINS" },
     { "from": "cnf", "to": "ms2", "type": "CONTAINS" },
