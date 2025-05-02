@@ -1,4 +1,4 @@
-{  "_iri": "https://www.manelle.fr",
+{  "_iri": "https://www.testnr.fr",
   "_nodes": [
     { "id": "cnf", "label": "CNF", "properties": { "name": "UPF" } },
     { "id": "lbGroup", "label": "Microservices", "properties": { "name": "UPF LB" } },
