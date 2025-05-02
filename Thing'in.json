@@ -1,8 +1,5 @@
 {
-  "_classes": [
-    "Graph"
-  ],
-  "_iri": "https://www.testnr.fr",
+  "_iri": "https://www.avatar.manellenr.fr",
   "additionalProp1": {
     "_nodes": [
       { "id": "cnf", "label": "CNF", "properties": { "name": "UPF" } },
