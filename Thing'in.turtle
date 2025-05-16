@@ -1,0 +1,174 @@
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPF>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFLB>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFOAM>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFMG>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFLB1>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFLB2>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFOAM1>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFOAM2>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFDB>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFMG1>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFMG2>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFMG3>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFLB1POD>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFLB2POD>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFDBProxy>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFDBPOD>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFMG1POD>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFMG2POD>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFMG3POD>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server4>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server9>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server10>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server11>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server12>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server13>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server14>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server15>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server16>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server17>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server22>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server23>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server24>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server25>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server26>  a ncm:CentralFrequency;
+.
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/Server28>  a ncm:CentralFrequency;
+.
