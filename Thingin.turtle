@@ -104,7 +104,7 @@
 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
-<https://www.manelleV3.fr/Server10> a ncm:CentralFrequency;
+<https://www.manelleV3.fr/Server16> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFLB2POD>
 .
 
