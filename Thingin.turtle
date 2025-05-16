@@ -92,7 +92,7 @@
 <https://www.manelleV3.fr/UPFMG3POD> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFMG3>
 .
-#################################################
+
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleV3.fr/Server4> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFLB1POD>
@@ -161,4 +161,24 @@
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleV3.fr/Server25> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFOAM2>
+.
+
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelleV3.fr/Server9> a ncm:CentralFrequency;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFDBProxy>
+.
+
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelleV3.fr/Server9> a ncm:CentralFrequency;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFDBPOD>
+.
+
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelleV3.fr/Server10> a ncm:CentralFrequency;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFDBProxy>
+.
+
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelleV3.fr/Server10> a ncm:CentralFrequency;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFDBPOD>
 .
