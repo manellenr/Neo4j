@@ -1,3 +1,5 @@
+# 1 Noeud
+
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleV2.fr/UPF>  a ncm:CentralFrequency;
@@ -167,6 +169,30 @@
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleV2.fr/Server26>  a ncm:CentralFrequency;
 .
+
+# 2 noeuds
+
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFLB> a ncm:CentralFrequency;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelle.fr/UPF>
+.
+
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFOAM> a ncm:CentralFrequency;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelle.fr/UPF>
+.
+
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFMG> a ncm:CentralFrequency;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelle.fr/UPF>
+.
+
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+<https://www.manelle.fr/UPFDB> a ncm:CentralFrequency;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelle.fr/UPF>
+.
+
+
 
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
