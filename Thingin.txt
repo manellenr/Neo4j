@@ -5,6 +5,17 @@ Domaine:
   "iri": "https://www.manelle.fr"
 }
 
+observable:comClassID
+observable:cpu
+observable:totalRam 
+observable:creationTime
+observable:timesExecuted
+core:endTime
+
+
+
+
+
 Avatar et nœud 1:
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
