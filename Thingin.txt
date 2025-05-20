@@ -13,7 +13,7 @@ observable:timesExecuted -> calcultion time
 core:endTime -> termination time
 action:error -> MTTF
 observable:number -> number of order
-? -> repair time
+observable:contentRecoveredStatus -> repair time
 
 
 
