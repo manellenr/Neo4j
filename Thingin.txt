@@ -15,9 +15,12 @@ action:error -> MTTF
 observable:number -> number of order
 observable:contentRecoveredStatus -> repair time
 
-
-
-
+MTTF (Server , pod)
+Pod Creation time
+Pod Required capacity (CPU , memory) 
+Server Creation time
+Server and pod Termination time
+Ms Calculation time
 
 Avatar et nœud 1:
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
