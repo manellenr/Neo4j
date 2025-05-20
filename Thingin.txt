@@ -32,6 +32,12 @@ action:performer "3"
 
 @prefix noria: <https://w3id.org/noria/ontology/> .
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+<http://www.manelletest.fr/UPF/NI_interface_24>
+  a noria:NetworkInterface;
+  noria:networkInterfaceDescription "interface_24" .
+
+@prefix noria: <https://w3id.org/noria/ontology/> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
 <http://www.example.com/object/NI_interface_24>
   a noria:NetworkInterface;
   prov:wasAssociatedWith <http://www.example.com/object/domaine_Iaas>;
