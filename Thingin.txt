@@ -8,7 +8,9 @@ Domaine:
 Avatar et nœud 1:
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 <https://www.manelle.fr/noeud_test>  a ncm:CentralFrequency;
+action:performer "3"
 .
 
 2e nœud:
