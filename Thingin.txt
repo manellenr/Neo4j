@@ -5,12 +5,15 @@ Domaine:
   "iri": "https://www.manelle.fr"
 }
 
-observable:comClassID
-observable:cpu
-observable:totalRam 
-observable:creationTime
-observable:timesExecuted
-core:endTime
+observable:comClassID -> c'est l'id
+observable:cpu -> cpu
+observable:totalRam -> memory
+observable:creationTime -> creation time
+observable:timesExecuted -> calcultion time
+core:endTime -> termination time
+action:error -> MTTF
+observable:number -> number of order
+? -> repair time
 
 
 
