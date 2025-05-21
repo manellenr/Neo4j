@@ -1,10 +1,11 @@
-Domaine:
+Domaine :
 {
   "expireAfter": -1,
   "historized": false,
   "iri": "https://www.manelleV3.fr"
 }
 
+Avatar :
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleV3.fr/UPF>  a ncm:CentralFrequency;
