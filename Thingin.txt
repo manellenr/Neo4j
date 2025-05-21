@@ -1,9 +1,10 @@
-Domaine:
-{
-  "expireAfter": -1,
-  "historized": false,
-  "iri": "https://www.manelle.fr"
-}
+Ontologie :
+MTTF (Server , pod)
+Pod Creation time
+Pod Required capacity (CPU , memory) 
+Server Creation time
+Server and pod Termination time
+Ms Calculation time
 
 observable:comClassID -> c'est l'id
 observable:cpu -> cpu
@@ -15,14 +16,7 @@ action:error -> MTTF
 observable:number -> number of order
 observable:contentRecoveredStatus -> repair time
 
-MTTF (Server , pod)
-Pod Creation time
-Pod Required capacity (CPU , memory) 
-Server Creation time
-Server and pod Termination time
-Ms Calculation time
-
-Avatar et nœud 1:
+Exemple de Bernard :
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
@@ -45,9 +39,3 @@ action:performer "3"
   observable:updatedDate "2024-10-14T08:11:08"^^xsd:dateTime;
   noria:networkInterfaceDescription "interface_24";
   noria:networkInterfaceOf <http://www.example.com/object/NE_VM_06> .
-
-2e nœud:
-@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
-<https://www.manelle.fr/noeud2_test> a ncm:CentralFrequency;
-<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelle.fr/noeud_test>
-.
