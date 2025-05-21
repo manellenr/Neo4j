@@ -16,6 +16,9 @@ action:error -> MTTF
 observable:number -> number of order
 observable:contentRecoveredStatus -> repair time
 
+Moi :
+
+
 Exemple de Bernard :
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
