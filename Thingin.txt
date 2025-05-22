@@ -18,6 +18,26 @@ observable:contentRecoveredStatus -> repair time
 
 Moi :
 
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+
+<https://www.manelle.fr/UPF>  a ncm:CentralFrequency;
+
+observable:comClassID a owl:DatatypeProperty ;
+observable:cpu a owl:DatatypeProperty ;
+observable:totalRam a owl:DatatypeProperty ;
+observable:creationTime a owl:DatatypeProperty,
+observable:timesExecuted a owl:DatatypeProperty ;
+observable:contentRecoveredStatus a owl:DatatypeProperty ;
+observable:number a owl:DatatypeProperty ;
+core:endTime a owl:DatatypeProperty ;
+action:error a owl:ObjectProperty 
+
+.
+
+
 
 Exemple de Bernard :
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
