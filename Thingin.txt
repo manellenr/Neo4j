@@ -58,6 +58,31 @@ action:error "0.9"
 
 .
 
+ou 
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+
+<https://www.manelle.fr/UPF>  a ncm:CentralFrequency;
+
+ observable:comClassID "CNF" ;
+ observable:cpu "30%" ;
+ observable:totalRam "10%" ;
+ observable:creationTime "1",
+ observable:timesExecuted "0.1" ;
+ observable:contentRecoveredStatus "4" ;
+ observable:number "20" ;
+
+ a core:endTime ;
+ core:endTime "2";
+
+ a action:error ;
+ action:error "0.9" ;
+
+.
+
 Exemple de Bernard :
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
