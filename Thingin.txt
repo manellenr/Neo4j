@@ -32,7 +32,6 @@ Moi :
     observable:totalRam 10 .
 
 Exemple de Bernard :
-
 @prefix noria: <https://w3id.org/noria/ontology/> .
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
 <http://www.example.com/object/NI_interface_24>
