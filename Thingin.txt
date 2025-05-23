@@ -28,7 +28,7 @@ Moi :
 observable:comClassID a owl:DatatypeProperty ;
 observable:cpu a owl:DatatypeProperty ;
 observable:totalRam a owl:DatatypeProperty ;
-observable:creationTime a owl:DatatypeProperty,
+observable:creationTime a owl:DatatypeProperty ;
 observable:timesExecuted a owl:DatatypeProperty ;
 observable:contentRecoveredStatus a owl:DatatypeProperty ;
 observable:number a owl:DatatypeProperty ;
@@ -49,7 +49,7 @@ Ajout des valeurs :
 observable:comClassID "CNF" ;
 observable:cpu "30%" ;
 observable:totalRam "10%" ;
-observable:creationTime "1",
+observable:creationTime "1" ;
 observable:timesExecuted "0.1" ;
 observable:contentRecoveredStatus "4" ;
 observable:number "20" ;
