@@ -6,22 +6,15 @@ Domaine :
 }
 
 Ontologie :
-MTTF (Server , pod)
-Pod Creation time
-Pod Required capacity (CPU , memory) 
-Server Creation time
-Server and pod Termination time
-Ms Calculation time
-
-observable:comClassID -> c'est l'id
-observable:cpu -> cpu
+observable:comClassID -> ID
+observable:cpu -> CPU
 observable:totalRam -> memory
-observable:creationTime -> creation time
-observable:timesExecuted -> calcultion time
-observable:endTime -> termination time
+observable:creationTime -> Creation time
+observable:timesExecuted -> Calculation time
+observable:endTime -> Termination time
 observable:exitTime -> MTTF
-observable:number -> number of order
-observable:contentRecoveredStatus -> repair time
+observable:number -> N° of order 
+observable:contentRecoveredStatus -> Repair time
 
 Avatar :
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
