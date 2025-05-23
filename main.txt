@@ -5,6 +5,9 @@ Domaine :
   "iri": "https://www.manelleikram.fr"
 }
 
+
+
+
 Ontologie :
 observable:comClassID -> ID
 observable:cpu -> CPU
@@ -16,6 +19,9 @@ observable:exitTime -> MTTF
 observable:number -> N° of order 
 observable:contentRecoveredStatus -> Repair time
 
+
+
+
 Avatar :
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
@@ -23,19 +29,24 @@ Avatar :
 <https://www.manelleikram.fr/UPF>  a ncm:CentralFrequency;
     observable:comClassID "CNF" .
 
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
 
-<https://www.manelleikram.fr/UPFLB> a ncm:CentralFrequency;
-<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleikram.fr/UPF>
+<https://www.manelleikram.fr/UPFLB> a ncm:CentralFrequency ;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleikram.fr/UPF> ;
     observable:comClassID "Microservice" ;
     observable:number 10 ;
     observable:timesExecuted 1 ;
     observable:cpu "50" ;
     observable:totalRam 50 .
 
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
-<https://www.manelleikram.fr/UPFOAM> a ncm:CentralFrequency;
-<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleikram.fr/UPF>
+
+<https://www.manelleikram.fr/UPFOAM> a ncm:CentralFrequency ;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleikram.fr/UPF> ;
     observable:comClassID "Microservice" ;
     observable:number 10 ;
     observable:timesExecuted 1 ;
