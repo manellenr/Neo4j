@@ -47,18 +47,6 @@ Moi :
     observable:totalRam 10 .
 
 Exemple de Bernard :
-@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
-@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
-@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
-<https://www.manelle.fr/noeud_test>  a ncm:CentralFrequency;
-action:performer "3"
-.
-
-@prefix noria: <https://w3id.org/noria/ontology/> .
-@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
-<http://www.manelletest.fr/UPF/NI_interface_24>
-  a noria:NetworkInterface;
-  noria:networkInterfaceDescription "interface_24" .
 
 @prefix noria: <https://w3id.org/noria/ontology/> .
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
