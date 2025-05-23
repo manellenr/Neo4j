@@ -18,8 +18,8 @@ observable:contentRecoveredStatus -> repair time
 
 Moi :
 
-@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
-@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 
@@ -39,8 +39,8 @@ action:error a owl:ObjectProperty
 
 Ajout des valeurs :
 
-@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
-@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 
