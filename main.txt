@@ -466,9 +466,12 @@ Avatar :
     observable:cpu "50" ;
     observable:totalRam 50 .
 
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
-<https://www.manelleikram.fr/Server10> a ncm:CentralFrequency;
-<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleikram.fr/UPFDBProxy>
+
+<https://www.manelleikram.fr/Server10> a ncm:CentralFrequency ;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleikram.fr/UPFDBProxy> ;
     observable:comClassID "PhysicalServer" ;
     observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
@@ -477,9 +480,12 @@ Avatar :
     observable:cpu "50" ;
     observable:totalRam 50 .
 
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
-<https://www.manelleikram.fr/Server10> a ncm:CentralFrequency;
-<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleikram.fr/UPFDBPOD>
+
+<https://www.manelleikram.fr/Server10> a ncm:CentralFrequency ;
+<http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleikram.fr/UPFDBPOD> ;
     observable:comClassID "PhysicalServer" ;
     observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
