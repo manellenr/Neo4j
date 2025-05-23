@@ -17,28 +17,6 @@ observable:number -> number of order
 observable:contentRecoveredStatus -> repair time
 
 Moi :
-
-@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
-@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
-@prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
-@prefix action: <https://ontology.unifiedcyberontology.org/uco/action/> .
-
-<https://www.manelle.fr/UPF>  a ncm:CentralFrequency;
-
-observable:comClassID a owl:DatatypeProperty ;
-observable:cpu a owl:DatatypeProperty ;
-observable:totalRam a owl:DatatypeProperty ;
-observable:creationTime a owl:DatatypeProperty ;
-observable:timesExecuted a owl:DatatypeProperty ;
-observable:contentRecoveredStatus a owl:DatatypeProperty ;
-observable:number a owl:DatatypeProperty ;
-core:endTime a owl:DatatypeProperty ;
-action:error a owl:ObjectProperty 
-
-.
-
-Ajout des valeurs :
-
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
 @prefix core: <https://ontology.unifiedcyberontology.org/uco/core/> .
@@ -54,6 +32,19 @@ Ajout des valeurs :
     observable:number "20" ;
     observable:timesExecuted "0.1" ;
     observable:totalRam "10%" .
+
+
+@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
+
+<https://www.manelle.fr/testupf> a ncm:CentralFrequency ;
+    observable:comClassID "CNF" ;
+    observable:contentRecoveredStatus "4" ;
+    observable:cpu "30" ;
+    observable:creationTime "2025-05-14T00:00:01"^^xsd:dateTime ;
+    observable:number 20 ;
+    observable:timesExecuted 1 ;
+    observable:totalRam 10 .
 
 Exemple de Bernard :
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable#> .
