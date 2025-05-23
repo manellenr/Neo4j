@@ -11,8 +11,8 @@ observable:cpu -> cpu
 observable:totalRam -> memory
 observable:creationTime -> creation time
 observable:timesExecuted -> calcultion time
-core:endTime -> termination time
-action:error -> MTTF
+observable:endTime -> termination time
+observable:exitTime -> MTTF
 observable:number -> number of order
 observable:contentRecoveredStatus -> repair time
 
@@ -27,20 +27,6 @@ Moi :
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
     observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 20 ;
-    observable:timesExecuted 1 ;
-    observable:totalRam 10 .
-
-
-@prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
-@prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
-
-<https://www.manelle.fr/avantdernier> a ncm:CentralFrequency ;
-    observable:comClassID "CNF" ;
-    observable:contentRecoveredStatus "4" ;
-    observable:cpu "30" ;
-    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
-    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
     observable:number 20 ;
     observable:timesExecuted 1 ;
     observable:totalRam 10 .
