@@ -132,323 +132,252 @@ Avatar :
 <https://www.manelleikram.fr/UPFDBProxy> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFDB>
     observable:comClassID "Container" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
-    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
-    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
     observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
-    observable:totalRam 50 .
+    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
+    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/UPFDBPOD> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFDB>
     observable:comClassID "Container" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
-    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
-    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
     observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
-    observable:totalRam 50 .
+    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
+    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/UPFLB1POD> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFLB1>
     observable:comClassID "Container" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
-    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
-    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
     observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
-    observable:totalRam 50 .
+    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
+    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/UPFLB2POD> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFLB2>
     observable:comClassID "Container" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
-    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
-    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
     observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
-    observable:totalRam 50 .
+    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
+    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/UPFMG1POD> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFMG1>
     observable:comClassID "Container" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
-    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
-    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
     observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
-    observable:totalRam 50 .
+    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
+    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/UPFMG2POD> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFMG2>
     observable:comClassID "Container" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
-    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
-    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
     observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
-    observable:totalRam 50 .
+    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
+    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/UPFMG3POD> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFMG3>
     observable:comClassID "Container" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
-    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
-    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
     observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
-    observable:totalRam 50 .
+    observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
+    observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server4> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFLB1POD>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server11> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFLB1POD>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server16> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFLB2POD>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server26> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFLB2POD>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server12> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFMG1POD>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server22> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFMG1POD>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server23> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFMG2POD>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server13> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFMG2POD>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server28> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFMG3POD>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server17> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFMG3POD>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server24> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFOAM1>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server14> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFOAM1>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server15> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFOAM2>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server25> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFOAM2>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server9> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFDBProxy>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server9> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFDBPOD>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server10> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFDBProxy>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl#> .
 <https://www.manelleikram.fr/Server10> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPFDBPOD>
     observable:comClassID "PhysicalServer" ;
-    observable:contentRecoveredStatus "3" ;
-    observable:cpu "50" ;
+    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
     observable:creationTime "2025-05-14T00:01:00"^^xsd:dateTime ;
     observable:endTime "2025-05-14T00:02:00"^^xsd:dateTime ;
-    observable:exitTime "2025-05-14T00:00:59"^^xsd:dateTime ;
-    observable:number 10 ;
-    observable:timesExecuted 1 ;
+    observable:contentRecoveredStatus "3" ;
+    observable:cpu "50" ;
     observable:totalRam 50 .
