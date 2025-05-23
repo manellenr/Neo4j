@@ -19,10 +19,12 @@ observable:contentRecoveredStatus -> Repair time
 Avatar :
 @prefix observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
+
 <https://www.manelleikram.fr/UPF>  a ncm:CentralFrequency;
     observable:comClassID "CNF" .
 
 @prefix ncm: <http://geni-orca.renci.org/owl/dtn.owl/> .
+
 <https://www.manelleikram.fr/UPFLB> a ncm:CentralFrequency;
 <http://geni-orca.renci.org/owl/dtn.owl#ocgGroup> <https://www.manelleV3.fr/UPF>
     observable:comClassID "Microservice" ;
